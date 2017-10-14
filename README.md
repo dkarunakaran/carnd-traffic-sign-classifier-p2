@@ -294,13 +294,21 @@ with tf.Session() as sess:
 
 Here are the rsult of the prediction:
 
+11 => Right-of-way at the next intersection
+12 => Priority road
+1 => Speed limit (30km/h)
+25 => Road work
+38 => Keep right
+36 => Go straight or right
+
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Right-of-way at the next intersection      		| Right-of-way at the next intersection   									| 
+| Priority road     			| Priority road 										|
+| Speed limit (30km/h)					| Speed limit (30km/h)											|
+| Road work	      		| Road work					 				|
+| Keep right		| Keep right      							|
+| Go straight or right		| Go straight or right     							|
 
 Finally top five softmax probablities for the 6 images
 
@@ -308,9 +316,10 @@ First image:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| .60         			| Right-of-way at the next intersection    									| 
+| .20     				| Priority road  										|
+| .05					| Speed limit (30km/h)											|
+| .04	      			| Road work						 				|
+| .01				    | Keep right   							|
+| .01				    | Go straight or right  							|
 
