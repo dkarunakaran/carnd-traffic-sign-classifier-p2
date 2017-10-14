@@ -95,12 +95,14 @@ Image before and after normalisation are displayed here:
 
 --show images--
 
-##### Model Architecture
+Model Architecture
 
 **Input**
+
 The LeNet architecture accepts a 32x32x3 image as input
 
 **Architecture**
+
 Layer 1: Convolutional. The output shape should be 28x28x6.
 
 Activation. Your choice of activation function.
