@@ -130,5 +130,65 @@ Layer 5: Fully Connected (Logits). This should have 43 outputs.
 Output
 Return the result of the 3rd fully connected layer.
 ```
+code look like below:
 
+```
+def LeNet(x): 
+    
+    # Layer 1: Convolutional. Input = 32x32x3. Output = 28x28x6.
+    conv1_W = tf.Variable(tf.truncated_normal(shape=(5, 5, 3, 6), mean = 0, stddev = 0.1))
+    conv1_b = tf.Variable(tf.zeros(6))
+    conv1   = tf.nn.conv2d(x, conv1_W, strides=[1, 1, 1, 1], padding='VALID') + conv1_b
+    
+    # Activation 1.
+    conv1 = tf.nn.relu(conv1)
+
+    # Pooling. Input = 28x28x6. Output = 14x14x6.
+    conv1 = tf.nn.max_pool(conv1, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='VALID')
+    
+    
+    # Layer 2: Convolutional. Input = 14x14x6. Output = 10x10x16.
+    conv2_W = tf.Variable(tf.truncated_normal(shape=(5, 5, 6, 16), mean = 0, stddev = 0.1))
+    conv2_b = tf.Variable(tf.zeros(16))
+    conv2   = tf.nn.conv2d(conv1, conv2_W, strides=[1, 1, 1, 1], padding='VALID') + conv2_b
+    
+    # Activation 2.
+    conv2 = tf.nn.relu(conv2)
+
+    # Pooling. Input = 10x10x16. Output = 5x5x16.
+    conv2 = tf.nn.max_pool(conv2, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='VALID')
+    
+    # Flatten. Input = 5x5x16. Output = 400.
+    flattened   = flatten(conv2)
+    
+    #Matrix multiplication
+    #input: 1x400
+    #weight: 400x120 
+    #Matrix multiplication(dot product rule)
+    #output = 1x400 * 400*120 => 1x120
+    
+     # Layer 3: Fully Connected. Input = 400. Output = 120.
+    fullyc1_W = tf.Variable(tf.truncated_normal(shape=(400, 120), mean = 0, stddev = 0.1))
+    fullyc1_b = tf.Variable(tf.zeros(120))
+    fullyc1   = tf.matmul(flattened, fullyc1_W) + fullyc1_b
+    
+    # Full connected layer activation 1.
+    fullyc1    = tf.nn.relu(fullyc1)
+    
+    # Layer 4: Fully Connected. Input = 120. Output = 84.
+    fullyc2_W  = tf.Variable(tf.truncated_normal(shape=(120, 84), mean = 0, stddev = 0.1))
+    fullyc2_b  = tf.Variable(tf.zeros(84))
+    fullyc2    = tf.matmul(fullyc1, fullyc2_W) + fullyc2_b
+    
+    # Full connected layer activation 2.
+    fullyc2    = tf.nn.relu(fullyc2)
+    
+    # Layer 5: Fully Connected. Input = 84. Output = 43.
+    fullyc3_W  = tf.Variable(tf.truncated_normal(shape=(84, 43), mean = 0, stddev = 0.1))
+    fullyc3_b  = tf.Variable(tf.zeros(43))
+    logits = tf.matmul(fullyc2, fullyc3_W) + fullyc3_b
+    
+    return logits
+
+```
 
