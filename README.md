@@ -71,4 +71,31 @@ Then a ploted a diagrm to show of count of each signs in training data set
 
 #### 3) Design and Test a Model Architecture
 
+The LeNet-5 architecture is used to predict the traffic signs. Before the training processs, dataset needs to have basic preprocessing using normalisation, grayscale etc. I found out normalisation itself gives very good output result and did notuser other preprocessing techniques.
+
+I did a reshiffling of the data so that it can increase the random nature of the datset.
+```
+from sklearn.utils import shuffle
+
+X_train, y_train = shuffle(X_train, y_train)
+X_valid, y_valid = shuffle(X_valid, y_valid)
+X_test, y_test = shuffle(X_test, y_test)
+
+```
+
+Then did the normalisation to make sure he image data has been normalized so that the data has mean zero and equal variance.
+```
+#Nomralisation
+X_train = (X_train-X_train.mean())/(np.max(X_train)-np.min(X_train))
+X_valid = (X_valid-X_valid.mean())/(np.max(X_valid)-np.min(X_valid))
+X_test = (X_test-X_test.mean())/(np.max(X_test)-np.min(X_test))
+```
+
+Image before after normalisation are displayed here:
+
+--show images--
+
+
+
+
 
