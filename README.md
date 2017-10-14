@@ -97,11 +97,11 @@ Image before and after normalisation are displayed here:
 
 **Model Architecture**
 ```
-**Input**
+Input
 
 The LeNet architecture accepts a 32x32x3 image as input
 
-**Architecture**
+Architecture
 
 Layer 1: Convolutional. The output shape should be 28x28x6.
 
@@ -127,7 +127,7 @@ Activation. Your choice of activation function.
 
 Layer 5: Fully Connected (Logits). This should have 43 outputs.
 
-**Output**
+Output
 Return the result of the 3rd fully connected layer.
 ```
 
