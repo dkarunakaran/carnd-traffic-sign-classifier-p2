@@ -20,7 +20,7 @@ The goals / steps of this project are the following:
 
 **Data Set Summary & Exploration**
 
-1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
+*Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
 I used the numpy and pandas library to calculate summary statistics of the traffic
 signs data set:
@@ -60,3 +60,4 @@ Number of testing examples = 12630
 Image data shape = (32, 32, 3)
 Number of classes = 43
 ```
+*Include an exploratory visualization of the dataset.
