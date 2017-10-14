@@ -192,7 +192,7 @@ def LeNet(x):
 
 ```
 
-To train the model, I used following hyperparameter after several trail and error method
+To train the model, I used following hyperparameter after several trial and error method.
 
 ```
 #Hyper parameters
@@ -201,8 +201,18 @@ learning_rate = 0.001
 epochs = 1 #30
 
 batch_size = 32
+```
+Lenet architecure gives the logits and cross entropy and loss operation gived the error compared to actual result and predicted result. Adamoptimiser is used to minimize the error.
 
 ```
+logits = LeNet(x)
+cross_entropy = tf.nn.softmax_cross_entropy_with_logits(labels=one_hot_y, logits=logits)
+loss_operation = tf.reduce_mean(cross_entropy)
+optimizer = tf.train.AdamOptimizer(learning_rate = learning_rate)
+training_operation = optimizer.minimize(loss_operation)
+```
+The above steps do the forward and backward pass and doing this on iterative manner will reduce the error at the end.
+
 
 
 
