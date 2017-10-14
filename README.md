@@ -98,14 +98,17 @@ X_test = (X_test-X_test.mean())/(np.max(X_test)-np.min(X_test))
 Image before and after normalisation are displayed here:
 
 Before:
+
 <img src="other_images/writeup_norm_before.png" width="480" alt="image" />
 
 After:
+
 <img src="other_images/writeup_norm_after.png" width="480" alt="image" />
 
 **Model Architecture**
 
-<img src="other_images/lenet.png" width="480" alt="image" />
+<img src="other_images/lenet.png" width="800" alt="image" />
+
 ```
 Input
 
