@@ -91,7 +91,7 @@ X_valid = (X_valid-X_valid.mean())/(np.max(X_valid)-np.min(X_valid))
 X_test = (X_test-X_test.mean())/(np.max(X_test)-np.min(X_test))
 ```
 
-Image before after normalisation are displayed here:
+Image before and after normalisation are displayed here:
 
 --show images--
 
