@@ -63,11 +63,15 @@ The goals / steps of this project are the following:
 
 Random training images displayed to go through the dataset using matplotlib
 
---show images--
+
+<img src="other_images/writeup_random1.png" width="480" alt="image" />
+<img src="other_images/writeup_random2.png" width="480" alt="image" />
+<img src="other_images/writeup_random3.png" width="480" alt="image" />
+<img src="other_images/writeup_random4.png" width="480" alt="image" />
   
 Then a ploted a diagrm to show of count of each signs in training data set
 
---show image--
+<img src="other_images/writeup_histogram.png" width="480" alt="image" />
 
 #### 3) Design and Test a Model Architecture
 
@@ -93,9 +97,15 @@ X_test = (X_test-X_test.mean())/(np.max(X_test)-np.min(X_test))
 
 Image before and after normalisation are displayed here:
 
---show images--
+Before:
+<img src="other_images/writeup_norm_before.png" width="480" alt="image" />
+
+After:
+<img src="other_images/writeup_norm_after.png" width="480" alt="image" />
 
 **Model Architecture**
+
+<img src="other_images/lenet.png" width="480" alt="image" />
 ```
 Input
 
@@ -198,9 +208,9 @@ To train the model, I used following hyperparameter after several trial and erro
 #Hyper parameters
 learning_rate = 0.001
 
-epochs = 1 #30
+epochs = 40
 
-batch_size = 32
+batch_size = 64
 ```
 Lenet architecure gives the logits and cross entropy and loss operation gived the error compared to actual result and predicted result. Adamoptimiser is used to minimize the error.
 
@@ -254,13 +264,13 @@ def evaluate(X_data, y_data):
     return total_loss/num_examples, total_accuracy/num_examples
 ```
 
-The higest validation accuracy reached around 94.5 and test validation accuracy at 93.5.
+The higest validation accuracy reached at 0.937 and test validation accuracy at .929.
 
 #### 4)Test a Model on New Images
 
 I found 6 images from the web of 32x32x3 dimension.
 
---list of images--
+<img src="german_images/1.png" width="480" alt="image" />
 
 Did a normalisation and image look like below:
 
