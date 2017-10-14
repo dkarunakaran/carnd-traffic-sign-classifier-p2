@@ -1,4 +1,4 @@
-## Project: Build a Traffic Sign Recognition Program
+# Project: Build a Traffic Sign Recognition Program
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
 Overview
@@ -7,7 +7,7 @@ In this project, you will use what you've learned about deep neural networks and
 
 ---
 
-### Build a Traffic Sign Recognition Project
+## Build a Traffic Sign Recognition Project
 
 The goals / steps of this project are the following:
 * Load the data set (see below for links to the project data set)
@@ -17,12 +17,15 @@ The goals / steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
+---
+
+## Refection
 
 ### Data Set Summary & Exploration
 
 #### 1) Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
-  I used the numpy and pandas library to calculate summary statistics of the traffic signs data set:
+  I used the numpy and pandas library to calculate summary statistics of the traffic signs data set.
 
   ```
   ### Replace each question mark with the appropriate value. 
@@ -61,19 +64,23 @@ The goals / steps of this project are the following:
   ```
 #### 2) Include an exploratory visualization of the dataset.
 
-Random training images displayed to go through the dataset using matplotlib
+Random training images displayed to go through the dataset using matplotlib.
 
---show images--
+
+<img src="other_images/writeup_random1.png" width="480" alt="image" />
+<img src="other_images/writeup_random2.png" width="480" alt="image" />
+<img src="other_images/writeup_random3.png" width="480" alt="image" />
+<img src="other_images/writeup_random4.png" width="480" alt="image" />
   
-Then a ploted a diagrm to show of count of each signs in training data set
+Then ploted a diagrm to show of count of each signs in training data set.
 
---show image--
+<img src="other_images/writeup_histogram.png" width="480" alt="image" />
 
 #### 3) Design and Test a Model Architecture
 
 The LeNet-5 architecture is used to predict the traffic signs. Before the training processs, dataset needs to have basic preprocessing using normalisation, grayscale etc. I found out normalisation itself gives very good output result and did notuser other preprocessing techniques.
 
-I did a reshiffling of the data so that it can increase the random nature of the datset.
+I did a reshuffling of the data so that it can increase the random nature of the datset.
 ```
 from sklearn.utils import shuffle
 
@@ -83,7 +90,7 @@ X_test, y_test = shuffle(X_test, y_test)
 
 ```
 
-Then did the normalisation to make sure he image data has been normalized so that the data has mean zero and equal variance.
+Then did the normalisation to make sure the image data has been normalized so that the data has mean zero and equal variance.
 ```
 #Nomralisation
 X_train = (X_train-X_train.mean())/(np.max(X_train)-np.min(X_train))
@@ -91,11 +98,22 @@ X_valid = (X_valid-X_valid.mean())/(np.max(X_valid)-np.min(X_valid))
 X_test = (X_test-X_test.mean())/(np.max(X_test)-np.min(X_test))
 ```
 
-Image before and after normalisation are displayed here:
+Image before and after normalisation are displayed here.
 
---show images--
+Before:
+
+<img src="other_images/writeup_norm_before.png" width="480" alt="image" />
+
+After:
+
+<img src="other_images/writeup_norm_after.png" width="480" alt="image" />
 
 **Model Architecture**
+
+LeNet-5 architecture:
+
+<img src="other_images/lenet.png" width="800" alt="image" />
+
 ```
 Input
 
@@ -195,12 +213,11 @@ def LeNet(x):
 To train the model, I used following hyperparameter after several trial and error method.
 
 ```
-#Hyper parameters
 learning_rate = 0.001
 
-epochs = 1 #30
+epochs = 40
 
-batch_size = 32
+batch_size = 64
 ```
 Lenet architecure gives the logits and cross entropy and loss operation gived the error compared to actual result and predicted result. Adamoptimiser is used to minimize the error.
 
@@ -254,17 +271,26 @@ def evaluate(X_data, y_data):
     return total_loss/num_examples, total_accuracy/num_examples
 ```
 
-The higest validation accuracy reached around 94.5 and test validation accuracy at 93.5.
+The higest validation accuracy reached at 0.944 and test validation accuracy at .920.
 
 #### 4)Test a Model on New Images
 
 I found 6 images from the web of 32x32x3 dimension.
 
---list of images--
+<img src="german_Images/1.png" width="480" alt="image" />
+<img src="german_Images/2.png" width="480" alt="image" />
+<img src="german_Images/3.png" width="480" alt="image" />
+<img src="german_Images/4.png" width="480" alt="image" />
+<img src="german_Images/5.png" width="480" alt="image" />
+<img src="german_Images/6.png" width="480" alt="image" />
+Did a normalisation and images look like below:
 
-Did a normalisation and image look like below:
-
---list of images--
+<img src="other_images/german_after1.png" width="480" alt="image" />
+<img src="other_images/german_after2.png" width="480" alt="image" />
+<img src="other_images/german_after3.png" width="480" alt="image" />
+<img src="other_images/german_after4.png" width="480" alt="image" />
+<img src="other_images/german_after5.png" width="480" alt="image" />
+<img src="other_images/german_after6.png" width="480" alt="image" />
 
 The model was able to correctly guess 6 of the 6 traffic signs, which gives an accuracy of 100%. 
 ```
@@ -292,7 +318,7 @@ with tf.Session() as sess:
 
 ```
 
-Here are the rsult of the prediction:
+Here are the result of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -303,70 +329,65 @@ Here are the rsult of the prediction:
 | Keep right		| Keep right      							|
 | Go straight or right		| Go straight or right     							|
 
-Finally top five softmax probablities for the 6 images
+Finally top five softmax probablities for the 6 images.
 
 First image:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Right-of-way at the next intersection    									| 
-| .20     				| Priority road  										|
-| .05					| Speed limit (30km/h)											|
-| .04	      			| Road work						 				|
-| .01				    | Keep right   							|
-| .01				    | Go straight or right  							|
+| 1.000000         			| Right-of-way at the next intersection    									| 
+| 0.000000    				| Beware of ice/snow									|
+| 0.000000				| Speed limit (30km/h)											|
+| 0.000000	      			| Children crossing					 				|
+| 0.000000				    | Pedestrians  							|
+| 0.000000				    | End of speed limit (80km/h)							|
 
 Second image:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Right-of-way at the next intersection    									| 
-| .20     				| Priority road  										|
-| .05					| Speed limit (30km/h)											|
-| .04	      			| Road work						 				|
-| .01				    | Keep right   							|
-| .01				    | Go straight or right  							|
+| 1.000000         			| Priority road    									| 
+| 0.000000     				| No passing for vehicles over 3.5 metric tons									|
+| 0.000000					| End of no passing by vehicles over 3.5 metric tons											|
+| 0.000000	      			| Stop				 				|
+| 0.000000				    | No entry							|
 
 Third image:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Right-of-way at the next intersection    									| 
-| .20     				| Priority road  										|
-| .05					| Speed limit (30km/h)											|
-| .04	      			| Road work						 				|
-| .01				    | Keep right   							|
-| .01				    | Go straight or right  							|
+| 0.915505         			| Speed limit (30km/h)    									| 
+| 0.084495     				| Speed limit (50km/h) 										|
+| 0.000000					| Speed limit (80km/h)											|
+| 0.000000	      			| Double curve					 				|
+| 0.000000				    | Speed limit (70km/h)						|
 
 Fourth image:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Right-of-way at the next intersection    									| 
-| .20     				| Priority road  										|
-| .05					| Speed limit (30km/h)											|
-| .04	      			| Road work						 				|
-| .01				    | Keep right   							|
-| .01				    | Go straight or right  							|
+| 1.000000        			| Road work   									| 
+| 0.000000     				| Dangerous curve to the left										|
+| 0.000000					| Wild animals crossing										|
+| 0.000000	      			| Speed limit (20km/h)						 				|
+| 0.000000				    | Speed limit (30km/h)	   							|
 
 Fifth image:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Right-of-way at the next intersection    									| 
-| .20     				| Priority road  										|
-| .05					| Speed limit (30km/h)											|
-| .04	      			| Road work						 				|
-| .01				    | Keep right   							|
-| .01				    | Go straight or right  							|
+| 1.000000        			| Keep right    									| 
+| 0.000000     				| Roundabout mandatory 										|
+| 0.000000					| General caution										|
+| 0.000000	      			| Priority road				 				|
+| 0.000000				    | Turn left ahead  							|
 
 Sixth image:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Right-of-way at the next intersection    									| 
-| .20     				| Priority road  										|
-| .05					| Speed limit (30km/h)											|
-| .04	      			| Road work						 				|
-| .01				    | Keep right   							|
-| .01				    | Go straight or right  							|
+| 0.998104       			| Go straight or right    									| 
+| 0.001896    				| Roundabout mandatory										|
+| 0.000000					| General caution											|
+| 0.000000	      			| Turn left ahead						 				|
+| 0.000000				    | Keep right   							|
