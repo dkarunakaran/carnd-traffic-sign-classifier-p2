@@ -95,8 +95,8 @@ Image before and after normalisation are displayed here:
 
 --show images--
 
-Model Architecture
-
+**Model Architecture**
+```
 **Input**
 
 The LeNet architecture accepts a 32x32x3 image as input
@@ -129,6 +129,6 @@ Layer 5: Fully Connected (Logits). This should have 43 outputs.
 
 **Output**
 Return the result of the 3rd fully connected layer.
-
+```
 
 
