@@ -7,7 +7,7 @@ In this project, you will use what you've learned about deep neural networks and
 
 ---
 
-**Build a Traffic Sign Recognition Project**
+### Build a Traffic Sign Recognition Project**
 
 The goals / steps of this project are the following:
 * Load the data set (see below for links to the project data set)
@@ -18,9 +18,9 @@ The goals / steps of this project are the following:
 * Summarize the results with a written report
 
 
-**Data Set Summary & Exploration**
+### Data Set Summary & Exploration
 
-***1) Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.***
+#### 1) Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
   I used the numpy and pandas library to calculate summary statistics of the traffic signs data set:
 
@@ -59,4 +59,4 @@ The goals / steps of this project are the following:
   Image data shape = (32, 32, 3)
   Number of classes = 43
   ```
-2) Include an exploratory visualization of the dataset.
+#### 2) Include an exploratory visualization of the dataset.
