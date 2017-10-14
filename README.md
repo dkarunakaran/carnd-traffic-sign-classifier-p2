@@ -22,42 +22,41 @@ The goals / steps of this project are the following:
 
 1) Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
-I used the numpy and pandas library to calculate summary statistics of the traffic
-signs data set:
+  I used the numpy and pandas library to calculate summary statistics of the traffic signs data set:
 
-```
-### Replace each question mark with the appropriate value. 
-### Use python, pandas or numpy methods rather than hard coding the results
+  ```
+  ### Replace each question mark with the appropriate value. 
+  ### Use python, pandas or numpy methods rather than hard coding the results
 
-# TODO: Number of training examples
-n_train = len(X_train)
+  # TODO: Number of training examples
+  n_train = len(X_train)
 
-# TODO: Number of validation examples
-n_validation = len(X_valid)
+  # TODO: Number of validation examples
+  n_validation = len(X_valid)
 
-# TODO: Number of testing examples.
-n_test = len(X_test)
+  # TODO: Number of testing examples.
+  n_test = len(X_test)
 
-# TODO: What's the shape of an traffic sign image?
-image_shape = X_train[0].shape
+  # TODO: What's the shape of an traffic sign image?
+  image_shape = X_train[0].shape
 
-# TODO: How many unique classes/labels there are in the dataset.
-n_classes = len(pd.Series(y_train).unique())
+  # TODO: How many unique classes/labels there are in the dataset.
+  n_classes = len(pd.Series(y_train).unique())
 
-print("Number of training examples =", n_train)
-print("Number of validation examples =", n_validation)
-print("Number of testing examples =", n_test)
-print("Image data shape =", image_shape)
-print("Number of classes =", n_classes)
+  print("Number of training examples =", n_train)
+  print("Number of validation examples =", n_validation)
+  print("Number of testing examples =", n_test)
+  print("Image data shape =", image_shape)
+  print("Number of classes =", n_classes)
 
-```
+  ```
 
-Result:
-```
-Number of training examples = 34799
-Number of validation examples = 4410
-Number of testing examples = 12630
-Image data shape = (32, 32, 3)
-Number of classes = 43
-```
+  Result:
+  ```
+  Number of training examples = 34799
+  Number of validation examples = 4410
+  Number of testing examples = 12630
+  Image data shape = (32, 32, 3)
+  Number of classes = 43
+  ```
 2) Include an exploratory visualization of the dataset.
