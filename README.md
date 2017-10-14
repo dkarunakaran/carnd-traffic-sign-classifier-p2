@@ -130,7 +130,7 @@ Layer 5: Fully Connected (Logits). This should have 43 outputs.
 Output
 Return the result of the 3rd fully connected layer.
 ```
-code look like below:
+Code look like below:
 
 ```
 def LeNet(x): 
@@ -191,4 +191,18 @@ def LeNet(x):
     return logits
 
 ```
+
+To train the model, I used following hyperparameter after several trail and error method
+
+```
+#Hyper parameters
+learning_rate = 0.001
+
+epochs = 1 #30
+
+batch_size = 32
+
+```
+
+
 
