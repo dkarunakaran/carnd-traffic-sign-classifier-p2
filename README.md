@@ -7,7 +7,7 @@ In this project, you will use what you've learned about deep neural networks and
 
 ---
 
-### Build a Traffic Sign Recognition Project**
+### Build a Traffic Sign Recognition Project
 
 The goals / steps of this project are the following:
 * Load the data set (see below for links to the project data set)
@@ -256,6 +256,61 @@ def evaluate(X_data, y_data):
 
 The higest validation accuracy reached around 94.5 and test validation accuracy at 93.5.
 
+#### 4)Test a Model on New Images
 
+I found 6 images from the web of 32x32x3 dimension.
 
+--list of images--
+
+Did a normalisation and image look like below:
+
+--list of images--
+
+The model was able to correctly guess 6 of the 6 traffic signs, which gives an accuracy of 100%. 
+```
+def eval_prediction(X_data, batch):
+    steps_per_epoch = len(X_data) // batch + (len(X_data)%batch > 0)
+    sess = tf.get_default_session()
+    predictions = np.zeros((len(X_data), n_classes))
+    for step in range(steps_per_epoch):
+        batch_x = X_data[step*batch:(step+1)*batch]
+        batch_y = np.zeros((len(batch_x), n_classes))
+        prediction = sess.run(tf.nn.softmax(logits), feed_dict={x: batch_x})
+        predictions[step*batch:(step+1)*batch] = prediction
+    return predictions
+
+pred_result = None
+
+with tf.Session() as sess:
+    saver1.restore(sess, tf.train.latest_checkpoint('.'))
+    prediction = eval_prediction(X_new, 64)
+    pred_result = sess.run(tf.nn.top_k(tf.constant(prediction),k=5))
+    values, indices = pred_result
+    print("Output")
+    for each in indices:
+        print('{} => {}'.format(each[0], df.name[each[0]]))
+
+```
+
+Here are the rsult of the prediction:
+
+| Image			        |     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| Stop Sign      		| Stop sign   									| 
+| U-turn     			| U-turn 										|
+| Yield					| Yield											|
+| 100 km/h	      		| Bumpy Road					 				|
+| Slippery Road			| Slippery Road      							|
+
+Finally top five softmax probablities for the 6 images
+
+First image:
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .60         			| Stop sign   									| 
+| .20     				| U-turn 										|
+| .05					| Yield											|
+| .04	      			| Bumpy Road					 				|
+| .01				    | Slippery Road      							|
 
