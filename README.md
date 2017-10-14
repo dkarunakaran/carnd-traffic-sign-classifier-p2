@@ -61,13 +61,13 @@ The goals / steps of this project are the following:
   ```
 #### 2) Include an exploratory visualization of the dataset.
 
-Showed below random training images to go through the dataset using matplotlib
+Random training images displayed to go through the dataset using matplotlib
 
-<show images>
+--show images--
   
-Then a plot a diagrm to show of count of each signs in training data set
+Then a ploted a diagrm to show of count of each signs in training data set
 
-<show image>
+--show image--
 
 #### 3) Design and Test a Model Architecture
 
