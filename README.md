@@ -69,7 +69,7 @@ Random training images displayed to go through the dataset using matplotlib
 <img src="other_images/writeup_random3.png" width="480" alt="image" />
 <img src="other_images/writeup_random4.png" width="480" alt="image" />
   
-Then a ploted a diagrm to show of count of each signs in training data set
+Then ploted a diagrm to show of count of each signs in training data set
 
 <img src="other_images/writeup_histogram.png" width="480" alt="image" />
 
@@ -274,10 +274,19 @@ The higest validation accuracy reached at 0.937 and test validation accuracy at 
 I found 6 images from the web of 32x32x3 dimension.
 
 <img src="german_Images/1.png" width="480" alt="image" />
+<img src="german_Images/2.png" width="480" alt="image" />
+<img src="german_Images/3.png" width="480" alt="image" />
+<img src="german_Images/4.png" width="480" alt="image" />
+<img src="german_Images/5.png" width="480" alt="image" />
+<img src="german_Images/6.png" width="480" alt="image" />
+Did a normalisation and images look like below:
 
-Did a normalisation and image look like below:
-
---list of images--
+<img src="other_images/german_after1.png" width="480" alt="image" />
+<img src="other_images/german_after2.png" width="480" alt="image" />
+<img src="other_images/german_after3.png" width="480" alt="image" />
+<img src="other_images/german_after4.png" width="480" alt="image" />
+<img src="other_images/german_after5.png" width="480" alt="image" />
+<img src="other_images/german_after6.png" width="480" alt="image" />
 
 The model was able to correctly guess 6 of the 6 traffic signs, which gives an accuracy of 100%. 
 ```
