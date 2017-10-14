@@ -314,7 +314,7 @@ with tf.Session() as sess:
 
 ```
 
-Here are the rsult of the prediction:
+Here are the result of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -332,63 +332,58 @@ First image:
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 1.000000         			| Right-of-way at the next intersection    									| 
-| 0.000000    				| Priority road  										|
+| 0.000000    				| Beware of ice/snow									|
 | 0.000000				| Speed limit (30km/h)											|
-| 0.000000	      			| Road work						 				|
-| 0.000000				    | Keep right   							|
-| 0.000000				    | Go straight or right  							|
+| 0.000000	      			| Children crossing					 				|
+| 0.000000				    | Pedestrians  							|
+| 0.000000				    | End of speed limit (80km/h)							|
 
 Second image:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| 0.000000         			| Right-of-way at the next intersection    									| 
-| 1.000000     				| Priority road  										|
-| 0.000000					| Speed limit (30km/h)											|
-| 0.000000	      			| Road work						 				|
-| 0.000000				    | Keep right   							|
-| 0.000000				    | Go straight or right  							|
+| 1.000000         			| Priority road    									| 
+| 0.000000     				| No passing for vehicles over 3.5 metric tons									|
+| 0.000000					| End of no passing by vehicles over 3.5 metric tons											|
+| 0.000000	      			| Stop				 				|
+| 0.000000				    | No entry							|
 
 Third image:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| 0.000000         			| Right-of-way at the next intersection    									| 
-| 0.000000     				| Priority road  										|
-| .05					| Speed limit (30km/h)											|
-| 0.000000	      			| Road work						 				|
-| 0.000000				    | Keep right   							|
-| 0.000000				    | Go straight or right  							|
+| 0.915505         			| Speed limit (30km/h)    									| 
+| 0.084495     				| Speed limit (50km/h) 										|
+| 0.000000					| Speed limit (80km/h)											|
+| 0.000000	      			| Double curve					 				|
+| 0.000000				    | Speed limit (70km/h)						|
 
 Fourth image:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Right-of-way at the next intersection    									| 
-| .20     				| Priority road  										|
-| .05					| Speed limit (30km/h)											|
-| .04	      			| Road work						 				|
-| .01				    | Keep right   							|
-| .01				    | Go straight or right  							|
+| 1.000000        			| Road work   									| 
+| 0.000000     				| Dangerous curve to the left										|
+| 0.000000					| Wild animals crossing										|
+| 0.000000	      			| Speed limit (20km/h)						 				|
+| 0.000000				    | Speed limit (30km/h)	   							|
 
 Fifth image:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Right-of-way at the next intersection    									| 
-| .20     				| Priority road  										|
-| .05					| Speed limit (30km/h)											|
-| .04	      			| Road work						 				|
-| .01				    | Keep right   							|
-| .01				    | Go straight or right  							|
+| 1.000000        			| Keep right    									| 
+| 0.000000     				| Roundabout mandatory 										|
+| 0.000000					| General caution										|
+| 0.000000	      			| Priority road				 				|
+| 0.000000				    | Turn left ahead  							|
 
 Sixth image:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Right-of-way at the next intersection    									| 
-| .20     				| Priority road  										|
-| .05					| Speed limit (30km/h)											|
-| .04	      			| Road work						 				|
-| .01				    | Keep right   							|
-| .01				    | Go straight or right  							|
+| 0.998104       			| Go straight or right    									| 
+| 0.001896    				| Roundabout mandatory										|
+| 0.000000					| General caution											|
+| 0.000000	      			| Turn left ahead						 				|
+| 0.000000				    | Keep right   							|
