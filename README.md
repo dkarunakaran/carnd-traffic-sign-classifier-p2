@@ -273,7 +273,7 @@ The higest validation accuracy reached at 0.937 and test validation accuracy at 
 
 I found 6 images from the web of 32x32x3 dimension.
 
-<img src="german_images/1.png" width="480" alt="image" />
+<img src="german_Images/1.png" width="480" alt="image" />
 
 Did a normalisation and image look like below:
 
