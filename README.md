@@ -267,7 +267,7 @@ def evaluate(X_data, y_data):
     return total_loss/num_examples, total_accuracy/num_examples
 ```
 
-The higest validation accuracy reached at 0.937 and test validation accuracy at .929.
+The higest validation accuracy reached at 0.944 and test validation accuracy at .920.
 
 #### 4)Test a Model on New Images
 
@@ -331,34 +331,34 @@ First image:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Right-of-way at the next intersection    									| 
-| .20     				| Priority road  										|
-| .05					| Speed limit (30km/h)											|
-| .04	      			| Road work						 				|
-| .01				    | Keep right   							|
-| .01				    | Go straight or right  							|
+| 1.000000         			| Right-of-way at the next intersection    									| 
+| 0.000000    				| Priority road  										|
+| 0.000000				| Speed limit (30km/h)											|
+| 0.000000	      			| Road work						 				|
+| 0.000000				    | Keep right   							|
+| 0.000000				    | Go straight or right  							|
 
 Second image:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Right-of-way at the next intersection    									| 
-| .20     				| Priority road  										|
-| .05					| Speed limit (30km/h)											|
-| .04	      			| Road work						 				|
-| .01				    | Keep right   							|
-| .01				    | Go straight or right  							|
+| 0.000000         			| Right-of-way at the next intersection    									| 
+| 1.000000     				| Priority road  										|
+| 0.000000					| Speed limit (30km/h)											|
+| 0.000000	      			| Road work						 				|
+| 0.000000				    | Keep right   							|
+| 0.000000				    | Go straight or right  							|
 
 Third image:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Right-of-way at the next intersection    									| 
-| .20     				| Priority road  										|
+| 0.000000         			| Right-of-way at the next intersection    									| 
+| 0.000000     				| Priority road  										|
 | .05					| Speed limit (30km/h)											|
-| .04	      			| Road work						 				|
-| .01				    | Keep right   							|
-| .01				    | Go straight or right  							|
+| 0.000000	      			| Road work						 				|
+| 0.000000				    | Keep right   							|
+| 0.000000				    | Go straight or right  							|
 
 Fourth image:
 
