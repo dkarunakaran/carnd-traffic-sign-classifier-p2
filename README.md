@@ -211,7 +211,50 @@ loss_operation = tf.reduce_mean(cross_entropy)
 optimizer = tf.train.AdamOptimizer(learning_rate = learning_rate)
 training_operation = optimizer.minimize(loss_operation)
 ```
-The above steps do the forward and backward pass and doing this on iterative manner will reduce the error at the end.
+The above steps do the forward and backward pass and doing this on iterative manner will reduce the error at the end. The training code look like below where you have control over epoch, learning_rate, and batch size.
+
+```
+with tf.Session() as sess:
+    sess.run(tf.global_variables_initializer())
+    num_examples = len(X_train)
+    
+    print("Training...")
+    print()
+    for i in range(epochs):
+        X_train, y_train = shuffle(X_train, y_train)
+        for offset in range(0, num_examples, batch_size):
+            end = offset + batch_size
+            batch_x, batch_y = X_train[offset:end], y_train[offset:end]
+            sess.run(training_operation, feed_dict={x: batch_x, y: batch_y})
+            
+        valid_loss, valid_accuracy = evaluate(X_valid, y_valid)
+        print("Epoch {}, Validation loss = {:.3f}, Validation Accuracy = {:.3f}".format(i+1, valid_loss, valid_accuracy))
+        print()
+        
+    saver1.save(sess, './classifier')
+    print("Model saved")
+```
+Evaluate function in the above code will give the validation accuracy at each epoch.
+
+```
+correct_prediction = tf.equal(tf.argmax(logits, 1), tf.argmax(one_hot_y, 1))
+accuracy_operation = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+saver1 = tf.train.Saver()
+
+def evaluate(X_data, y_data):
+    num_examples = len(X_data)
+    total_accuracy = 0
+    total_loss = 0
+    sess = tf.get_default_session()
+    for offset in range(0, num_examples, batch_size):
+        batch_x, batch_y = X_data[offset:offset+batch_size], y_data[offset:offset+batch_size]
+        loss, accuracy = sess.run([loss_operation, accuracy_operation], feed_dict={x: batch_x, y: batch_y})
+        total_accuracy += (accuracy * len(batch_x))
+        total_loss += (loss * len(batch_x))
+    return total_loss/num_examples, total_accuracy/num_examples
+```
+
+The higest validation accuracy reached around 94.5 and test validation accuracy at 93.5.
 
 
 
