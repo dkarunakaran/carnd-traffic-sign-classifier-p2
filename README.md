@@ -1,4 +1,4 @@
-## Project: Build a Traffic Sign Recognition Program
+# Project: Build a Traffic Sign Recognition Program
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
 Overview
@@ -7,7 +7,7 @@ In this project, you will use what you've learned about deep neural networks and
 
 ---
 
-### Build a Traffic Sign Recognition Project
+## Build a Traffic Sign Recognition Project
 
 The goals / steps of this project are the following:
 * Load the data set (see below for links to the project data set)
@@ -17,6 +17,7 @@ The goals / steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
+## Refection
 
 ### Data Set Summary & Exploration
 
@@ -61,7 +62,7 @@ The goals / steps of this project are the following:
   ```
 #### 2) Include an exploratory visualization of the dataset.
 
-Random training images displayed to go through the dataset using matplotlib
+Random training images displayed to go through the dataset using matplotlib.
 
 
 <img src="other_images/writeup_random1.png" width="480" alt="image" />
@@ -69,7 +70,7 @@ Random training images displayed to go through the dataset using matplotlib
 <img src="other_images/writeup_random3.png" width="480" alt="image" />
 <img src="other_images/writeup_random4.png" width="480" alt="image" />
   
-Then ploted a diagrm to show of count of each signs in training data set
+Then ploted a diagrm to show of count of each signs in training data set.
 
 <img src="other_images/writeup_histogram.png" width="480" alt="image" />
 
@@ -77,7 +78,7 @@ Then ploted a diagrm to show of count of each signs in training data set
 
 The LeNet-5 architecture is used to predict the traffic signs. Before the training processs, dataset needs to have basic preprocessing using normalisation, grayscale etc. I found out normalisation itself gives very good output result and did notuser other preprocessing techniques.
 
-I did a reshiffling of the data so that it can increase the random nature of the datset.
+I did a reshuffling of the data so that it can increase the random nature of the datset.
 ```
 from sklearn.utils import shuffle
 
@@ -87,7 +88,7 @@ X_test, y_test = shuffle(X_test, y_test)
 
 ```
 
-Then did the normalisation to make sure he image data has been normalized so that the data has mean zero and equal variance.
+Then did the normalisation to make sure the image data has been normalized so that the data has mean zero and equal variance.
 ```
 #Nomralisation
 X_train = (X_train-X_train.mean())/(np.max(X_train)-np.min(X_train))
@@ -95,7 +96,7 @@ X_valid = (X_valid-X_valid.mean())/(np.max(X_valid)-np.min(X_valid))
 X_test = (X_test-X_test.mean())/(np.max(X_test)-np.min(X_test))
 ```
 
-Image before and after normalisation are displayed here:
+Image before and after normalisation are displayed here.
 
 Before:
 
@@ -106,6 +107,8 @@ After:
 <img src="other_images/writeup_norm_after.png" width="480" alt="image" />
 
 **Model Architecture**
+
+LeNet-5 architecture:
 
 <img src="other_images/lenet.png" width="800" alt="image" />
 
@@ -208,7 +211,6 @@ def LeNet(x):
 To train the model, I used following hyperparameter after several trial and error method.
 
 ```
-#Hyper parameters
 learning_rate = 0.001
 
 epochs = 40
@@ -325,7 +327,7 @@ Here are the result of the prediction:
 | Keep right		| Keep right      							|
 | Go straight or right		| Go straight or right     							|
 
-Finally top five softmax probablities for the 6 images
+Finally top five softmax probablities for the 6 images.
 
 First image:
 
