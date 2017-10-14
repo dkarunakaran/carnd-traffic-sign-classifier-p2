@@ -294,13 +294,6 @@ with tf.Session() as sess:
 
 Here are the rsult of the prediction:
 
-11 => Right-of-way at the next intersection
-12 => Priority road
-1 => Speed limit (30km/h)
-25 => Road work
-38 => Keep right
-36 => Go straight or right
-
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Right-of-way at the next intersection      		| Right-of-way at the next intersection   									| 
@@ -323,3 +316,57 @@ First image:
 | .01				    | Keep right   							|
 | .01				    | Go straight or right  							|
 
+Second image:
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .60         			| Right-of-way at the next intersection    									| 
+| .20     				| Priority road  										|
+| .05					| Speed limit (30km/h)											|
+| .04	      			| Road work						 				|
+| .01				    | Keep right   							|
+| .01				    | Go straight or right  							|
+
+Third image:
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .60         			| Right-of-way at the next intersection    									| 
+| .20     				| Priority road  										|
+| .05					| Speed limit (30km/h)											|
+| .04	      			| Road work						 				|
+| .01				    | Keep right   							|
+| .01				    | Go straight or right  							|
+
+Fourth image:
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .60         			| Right-of-way at the next intersection    									| 
+| .20     				| Priority road  										|
+| .05					| Speed limit (30km/h)											|
+| .04	      			| Road work						 				|
+| .01				    | Keep right   							|
+| .01				    | Go straight or right  							|
+
+Fifth image:
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .60         			| Right-of-way at the next intersection    									| 
+| .20     				| Priority road  										|
+| .05					| Speed limit (30km/h)											|
+| .04	      			| Road work						 				|
+| .01				    | Keep right   							|
+| .01				    | Go straight or right  							|
+
+Sixth image:
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .60         			| Right-of-way at the next intersection    									| 
+| .20     				| Priority road  										|
+| .05					| Speed limit (30km/h)											|
+| .04	      			| Road work						 				|
+| .01				    | Keep right   							|
+| .01				    | Go straight or right  							|
